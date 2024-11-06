@@ -164,6 +164,10 @@ app.get("/users", verifyToken, async (req, res) => {
     res.send(users);
 });
 
+app.get("/",  async (req, res) => {
+    res.send("Welcome to jobDuniya");
+});
+
 app.get("/profile/:ID", verifyToken, async (req, res) => {
     const id = req.params.ID;
     const user = await User.find({ _id: id }).select("-password");
