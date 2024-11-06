@@ -26,7 +26,11 @@ const { log } = require("console");
 // const multer = require("multer");
 
 //
-app.use(cors());
+app.use(cors({
+    origin: 'https://jobduniya-live.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 
